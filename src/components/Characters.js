@@ -18,8 +18,7 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
         <nav>
             <ul className='pagination justify-content-center'>
                
-                {
-                    
+                {                   
                     info.prev ?
                         (
                             <li className='page-item'>
@@ -27,11 +26,10 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
                             </li>
                         )
                     : null
-
                 }
 
                 {
-                    info.next ?
+                 info.next ?
                         (
                          <li className='page-item'>
                                 <button className='page-link' onClick={()=>siguiente(info.next)} >Siguiente</button>
@@ -54,7 +52,9 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
                             <h5 className="card-title" >{item.name}</h5>
                             <hr />
                             <p className="card-text">Locación: {item.location.name}</p>
-                            <p>Género: {item.gender}</p>
+                            <p  className="card-text">Género: {item.gender}</p>
+                            <p  className="card-text">Status: {item.status}</p>
+                            {/* <p>Status: {item.status}</p> */}
                         </div>
                     </div>
                 </div>
@@ -62,40 +62,48 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
         }
 
         <nav>
-            <ul className='pagination justify-content-center'>
+                <ul className='pagination justify-content-center'>  
+                    {
+                  
+                    info.prev ?
+                        (
+                            <li className='page-item'>
+                                <button className='page-link'  onClick={()=>anterior(info.prev)} >Anterior</button>
+                            </li>
+                        )
+                    : null
+
+                    }
+
+                    {
+                    info.next ?
+                        (
+                         <li className='page-item'>
+                                <button className='page-link' onClick={()=>siguiente(info.next)} >Siguiente</button>
+                        </li>
+                        )
+                        : null
+
+                    }
 
 
-                <li className='page-item'>
-                    <button className='page-link' >Anterior</button>
-                </li>
-
-
-
-
-
-                <li className='page-item'>
-                    <button className='page-link' >Siguiente</button>
-                </li>
-
-
-
-
-
-            </ul>
+              </ul>
         </nav>
     </div>
 
 
 )
 
-const mapStateToProps = (state) => //trae los datos del state del reducer
+const mapStateToProps = (state) => //trae los datos del state del reducer, de la bd
 ({
 
     personajes: state.personajes,
-    info: state.info
+    info: state.info,
+    
 })
 
 const urlPjs = "https://rickandmortyapi.com/api/character"
+const urlAlivepjs= "https://rickandmortyapi.com/api/character/?status=alive"
 
 const mapDispatchToProps = (dispatch) => ({
 
@@ -125,11 +133,13 @@ const mapDispatchToProps = (dispatch) => ({
             .then(data => {
                 const personajes = data.results
                 const info = data.info
+                //const status = data.status
                 dispatch
                     ({
                         type: "AGREGARPJS",
                         personajes: personajes,
-                        info: info
+                        info: info,
+                        //status: status
                     })
             })
 
@@ -144,11 +154,13 @@ const mapDispatchToProps = (dispatch) => ({
             .then(data => {
                 const personajes = data.results
                 const info = data.info
+                //const status = data.status
                 dispatch
                     ({
                         type: "AGREGARPJS",
                         personajes: personajes,
-                        info: info
+                        info: info,
+                        //status: status
                     })
             })
 

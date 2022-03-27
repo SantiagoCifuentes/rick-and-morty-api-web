@@ -7,7 +7,8 @@ const initialState = {
     info : {prev : null,
             next: null},
     personajes: [{ id: null, name: null, status: null,
-     location: {name :null} }]
+     location: {name :null}}
+   ]
 }
 
 
@@ -18,7 +19,8 @@ const reducer = (state = initialState, action) => {
         return {
           
           personajes: action.personajes,
-          info : action.info
+          info : action.info,
+          
           
         }
         break;
