@@ -5,15 +5,12 @@ import App from './App';
 
 
 
-const store=createStore((state=0,action)=>   //recibe como argumento una funacion
-{
-  //action= {type: 'tipo de accion',payload: any}, el ccreateStore devuelve un state
-})
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <App />
-  </React.StrictMode>,
+  ,
   document.getElementById('root')
 );
 
