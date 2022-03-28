@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
   
     <nav className="navbar navbar-dark bg-dark">
     <div className=" d-flex flex-row bd-highlight ms- " >
-      <a className="navbar-brand text-uppercase p-2 bd-highlight " href="/">{titulo} </a>
+      <a className="navbar-brand text-uppercase p-2 bd-highlight " href="https://santiagocifuentes.github.io/rick-and-morty-api-web/index.html">{titulo} </a>
       <input className="p-2 bd-highlight " id='buscador' type="text" placeholder="Busca el personaje" aria-label="Username "/>
       <button className="p-2 bd-highlight ms-1" onClick={()=>buscarPersonajes()} >Buscar</button>
       <button  className="  btn-primary ms-1" onClick={()=>alivePersonajes()}>Personajes vivos</button>
