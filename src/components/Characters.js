@@ -54,7 +54,7 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
                             <p className="card-text">Locación: {item.location.name}</p>
                             <p  className="card-text">Género: {item.gender}</p>
                             <p  className="card-text">Status: {item.status}</p>
-                            {/* <p>Status: {item.status}</p> */}
+                           
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
 
 )
 
-const mapStateToProps = (state) => //trae los datos del state del reducer, de la bd
+const mapStateToProps = (state) => //trae los datos del state del reducer, de la "bd"
 ({
 
     personajes: state.personajes,
@@ -133,13 +133,13 @@ const mapDispatchToProps = (dispatch) => ({
             .then(data => {
                 const personajes = data.results
                 const info = data.info
-                //const status = data.status
+                
                 dispatch
                     ({
                         type: "AGREGARPJS",
                         personajes: personajes,
                         info: info,
-                        //status: status
+                        
                     })
             })
 
@@ -154,13 +154,13 @@ const mapDispatchToProps = (dispatch) => ({
             .then(data => {
                 const personajes = data.results
                 const info = data.info
-                //const status = data.status
+               
                 dispatch
                     ({
                         type: "AGREGARPJS",
                         personajes: personajes,
                         info: info,
-                        //status: status
+                        
                     })
             })
 
@@ -170,4 +170,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Characters)
-//export default Characters
+
