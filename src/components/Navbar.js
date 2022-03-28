@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
       <a className="navbar-brand text-uppercase p-2 bd-highlight " href="/">{titulo} </a>
       <input className="p-2 bd-highlight " id='buscador' type="text" placeholder="Busca el personaje" aria-label="Username "/>
       <button className="p-2 bd-highlight ms-1" onClick={()=>buscarPersonajes()} >Buscar</button>
-      <button  className=" btn-primary ms-1" onClick={()=>alivePersonajes()}>Personajes vivos</button>
+      <button  className="  btn-primary ms-1" onClick={()=>alivePersonajes()}>Personajes vivos</button>
       <button  className=" btn-secondary ms-1" onClick={()=>deadPersonajes()}>Personajes muertos</button>
     </div>
    

@@ -46,14 +46,14 @@ const Characters = ({ personajes, agregarPersonajes, info,siguiente,anterior }) 
 
             personajes.map((item, index) => (  //item es cada uno de los pjs
                 <div key={index} className='col mb-5'>
-                    <div className='card' style={{ minWidth: "200px" }}>
+                    <div className='card'  style={{ minWidth: "200px" ,minHeight:"500px"}}>
                         <img src={item.image} alt='' />
-                        <div className="">
-                            <h5 className="card-title" >{item.name}</h5>
+                        <div className= "">
+                            <h5 className="card-title " >{item.name}</h5>
                             <hr />
-                            <p className="card-text">Locación: {item.location.name}</p>
-                            <p  className="card-text">Género: {item.gender}</p>
-                            <p  className="card-text">Status: {item.status}</p>
+                            <h5  className="card-text">Locación: {item.location.name}</h5>
+                            <h5  className="card-text">Género: {item.gender}</h5>
+                            <h5  className="card-text">Status: {item.status}</h5>
                            
                         </div>
                     </div>
@@ -164,6 +164,7 @@ const mapDispatchToProps = (dispatch) => ({
                     })
             })
 
+            
             .catch(error => console.log(error))
 
     }
